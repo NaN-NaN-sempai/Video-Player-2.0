@@ -1,0 +1,45 @@
+(PORTUGUÊS)
+Para escolher o video, você pode usar a função selectVideo("SEU LINK PARA O VIDEO") no cosole
+ou selecionar diretamente pelo input de seleção de arquivos.
+
+Você pode adicionar o player ao seu site também, utilizando um <IFRAME>,
+como mostrado em https://nan-nan-sempai.github.io/Video-Player-2.0/exemploDeIframe.html
+A tag <SCRIPT> é MUITO IMPORTANTE para o funcionameto do <IFRAME>, ela que ira definir o video.
+EX:
+
+<iframe data-video-url="SEU LINK PARA O VIDEO" src="https://nan-nan-sempai.github.io/Video-Player-2.0/" height="400" width="600" scrolling="no" id="videoIframe"></iframe>
+<script>
+var iframeId = document.getElementById("videoIframe");
+var iframeContent = (iframeId.contentWindow || iframeId.contentDocument);
+if (iframeContent.document)
+iframeContent = iframeContent.document;
+function selectVideo(url){
+iframeContent.getElementById("idDoVideo").setAttribute('src', url);
+iframeContent.getElementById("video_player").load();
+}
+selectVideo(parent.document.getElementById("videoIframe").getAttribute("data-video-url"))
+</script>
+
+
+
+(ENGLISH)
+To chose the video, you can use the function selectVideo("YOUR LINK TO THE VIDEO") in cosole
+or select directly from the file selection input.
+
+You can add the player to your site too, using an <IFRAME>,
+as shown at https://nan-nan-sempai.github.io/Video-Player-2.0/Iframeexample.html
+The tag <SCRIPT> is VERY IMPORTANT for the <IFRAME> operation, it will define the video.
+EX:
+
+<iframe data-video-url="YOUR LINK TO THE VIDEO" src="https://nan-nan-sempai.github.io/Video-Player-2.0/" height="400" width="600" scrolling="no" id="videoIframe"></iframe>
+<script>
+var iframeId = document.getElementById("videoIframe");
+var iframeContent = (iframeId.contentWindow || iframeId.contentDocument);
+if (iframeContent.document)
+iframeContent = iframeContent.document;
+function selectVideo(url){
+iframeContent.getElementById("idDoVideo").setAttribute('src', url);
+iframeContent.getElementById("video_player").load();
+}
+selectVideo(parent.document.getElementById("videoIframe").getAttribute("data-video-url"))
+</script>
